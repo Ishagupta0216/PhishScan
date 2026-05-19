@@ -369,7 +369,7 @@ const TRUSTED_PATTERNS = {
 function getSenderTrust(text) {
   for (const pattern of TRUSTED_PATTERNS.high) {
     if (pattern.test(text)) {
-      return { level: 'high', label: 'Trusted institutional sender', reduction: 30 };
+      return { level: 'high', label: 'Trusted sender', reduction: 30 };
     }
   }
   for (const pattern of TRUSTED_PATTERNS.medium) {
