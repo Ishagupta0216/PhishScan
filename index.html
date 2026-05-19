@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhishScan — Email Phishing Detector</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="hdr">
+      <div class="hdr-icon">🛡️</div>
+      <div>
+        <div class="hdr-title">PhishScan</div>
+        <div class="hdr-sub">4-layer SOC phishing detector </div>
+      </div>
+    </div>
+
+    <div class="paste-tip">
+      💡 <strong>Best results:</strong> In Gmail → open email → three dots → 
+      <em>Show Original</em> → Copy All → Paste below.
+      This gives PhishScan access to SPF, DKIM, DMARC headers which are the 
+      strongest signals.
+    </div>
+
+    <textarea id="emailIn" placeholder="Paste the full raw email here including headers (From:, SPF:, DKIM:, DMARC:), subject, and body..."></textarea>
+
+    <div class="btn-row">
+      <button class="btn-scan" onclick="runScan()">🔍 Scan Email</button>
+      <button onclick="loadSample('phish')">🐛 Phishing Sample</button>
+      <button onclick="loadSample('clean')">✅ Clean Sample</button>
+      <button onclick="clearAll()">🗑️ Clear</button>
+    </div>
+
+    <div id="out"></div>
+
+  </div>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
